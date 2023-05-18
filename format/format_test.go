@@ -5,7 +5,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/open-pomodoro/go-openpomodoro"
+	"github.com/drpaepper/go-openpomodoro"
 	"github.com/stretchr/testify/assert"
 )
 

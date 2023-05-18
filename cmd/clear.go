@@ -1,7 +1,7 @@
 package cmd
 
 import (
-	"github.com/open-pomodoro/openpomodoro-cli/hook"
+	"github.com/drpaepper/openpomodoro-cli/hook"
 	"github.com/spf13/cobra"
 )
 

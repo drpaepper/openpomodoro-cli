@@ -7,7 +7,7 @@ import (
 	"os"
 	"strings"
 
-	"github.com/open-pomodoro/go-openpomodoro"
+	"github.com/drpaepper/go-openpomodoro"
 	"github.com/soh335/ical"
 	"github.com/spf13/cobra"
 )

@@ -7,7 +7,7 @@ import (
 
 	"github.com/justincampbell/go-countdown"
 	"github.com/justincampbell/go-countdown/format"
-	"github.com/open-pomodoro/openpomodoro-cli/hook"
+	"github.com/drpaepper/openpomodoro-cli/hook"
 	"github.com/spf13/cobra"
 )
 

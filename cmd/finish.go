@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/open-pomodoro/openpomodoro-cli/format"
-	"github.com/open-pomodoro/openpomodoro-cli/hook"
+	"github.com/drpaepper/openpomodoro-cli/format"
+	"github.com/drpaepper/openpomodoro-cli/hook"
 	"github.com/spf13/cobra"
 )
 

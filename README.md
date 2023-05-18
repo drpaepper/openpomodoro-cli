@@ -1,6 +1,6 @@
 # Open-Pomodoro CLI
 
-> A command-line Pomodoro tracker which uses the [Open Pomodoro Format](https://github.com/open-pomodoro/open-pomodoro-format/blob/master/README.md)
+> A command-line Pomodoro tracker which uses the [Open Pomodoro Format](https://github.com/drpaepper/drpaepper-format/blob/master/README.md)
 
 ## Table of Contents
 
@@ -22,17 +22,17 @@
 
 ## Installation
 
-1. Download the latest package for your platform from the [Releases page](https://github.com/open-pomodoro/openpomodoro-cli/releases/latest).
+1. Download the latest package for your platform from the [Releases page](https://github.com/drpaepper/openpomodoro-cli/releases/latest).
 2. Untar the package with `tar -zxvf openpomodoro-cli*.tar.gz`.
 3. Move the extracted `openpomodoro-cli` file to a directory in your `$PATH` (for most systems, this will be `/usr/local/bin/`).
 
 Or, if you have a [Go development environment](https://golang.org/doc/install):
 
 ```
-go get -u github.com/open-pomodoro/openpomodoro-cli/cmd/pomodoro
+go get -u github.com/drpaepper/openpomodoro-cli/cmd/pomodoro
 ```
 
-> If you already have another command named `pomodoro`, use `go get github.com/open-pomodoro/openpomodoro-cli` to install the `openpomodoro-cli` command.
+> If you already have another command named `pomodoro`, use `go get github.com/drpaepper/openpomodoro-cli` to install the `openpomodoro-cli` command.
 
 ## Usage
 

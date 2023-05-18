@@ -6,12 +6,12 @@ import (
 	"os/exec"
 	"path"
 
-	"github.com/open-pomodoro/go-openpomodoro"
+	"github.com/drpaepper/go-openpomodoro"
 )
 
 // Run runs a hook with the given name.
 func Run(client *openpomodoro.Client, name string) error {
-	filename := path.Join(client.Directory, "hooks", name)
+	filename := path.Join(client.ConfigDirectory, "hooks", name)
 
 	if _, err := os.Stat(filename); os.IsNotExist(err) {
 		return nil

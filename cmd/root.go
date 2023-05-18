@@ -5,8 +5,8 @@ import (
 	"log"
 	"os"
 
-	"github.com/open-pomodoro/go-openpomodoro"
-	"github.com/open-pomodoro/openpomodoro-cli/format"
+	"github.com/drpaepper/go-openpomodoro"
+	"github.com/drpaepper/openpomodoro-cli/format"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 )
@@ -32,7 +32,7 @@ func init() {
 
 	RootCmd.PersistentFlags().StringVarP(
 		&directoryFlag, "directory", "", ``,
-		"directory to read/write Open Pomodoro data (default is ~/.pomodoro/)")
+		"directory to read/write Open Pomodoro data (default is ~/.config/pomodoro/)")
 
 	RootCmd.PersistentFlags().StringVarP(
 		&formatFlag, "format", "f", format.DefaultFormat,

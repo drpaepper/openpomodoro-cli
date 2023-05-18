@@ -6,7 +6,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/open-pomodoro/go-openpomodoro"
+	"github.com/drpaepper/go-openpomodoro"
 )
 
 const (
