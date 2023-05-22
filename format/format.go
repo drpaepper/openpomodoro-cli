@@ -21,6 +21,8 @@ var FormatParts = map[string]Formatter{
 	`%!r`: timeRemaining(true),
 	`%R`:  minutesRemaining(false),
 	`%!R`: minutesRemaining(true),
+	`%Z`:  glyphRemaining(false),
+	`%!Z`: glyphRemaining(true),
 	`%l`:  duration,
 	`%L`:  durationMinutes,
 
@@ -77,6 +79,73 @@ func minutesRemaining(exclaim bool) Formatter {
 			}
 		}
 		return defaultString(s.Pomodoro.RemainingMinutes())
+	}
+}
+
+func selectGlyph(isBreak bool, r int, d int) string {
+
+	p := round((float64(r) / float64(d)) * 100)
+
+	if isBreak {
+
+		if p > 83 {
+			return "󰫈"
+		} else if p > 67 {
+			return "󰫇"
+		} else if p > 50 {
+			return "󰫆"
+		} else if p > 33 {
+			return "󰫅"
+		} else if p > 17 {
+			return "󰫄"
+		} else if p > 0 {
+			return "󰫃"
+		} else {
+			return "󰋙"
+		}
+	} else {
+		if p > 88 {
+			return "󰪥"
+		} else if p > 75 {
+			return "󰪤"
+		} else if p > 63 {
+			return "󰪣"
+		} else if p > 50 {
+			return "󰪢"
+		} else if p > 38 {
+			return "󰪡"
+		} else if p > 25 {
+			return "󰪠"
+		} else if p > 13 {
+			return "󰪟"
+		} else if p > 0 {
+			return "󰪞"
+		} else {
+			return "󰄰"
+		}
+
+	}
+
+}
+
+func glyphRemaining(exclaim bool) Formatter {
+	return func(s *openpomodoro.State) string {
+		if s.Pomodoro.IsDone() {
+			if exclaim {
+				return DefaultExclamationPoint
+			} else {
+				if s.Pomodoro.Description == "BREAK" {
+					return "󰋙"
+				} else {
+					return "󰄰"
+				}
+			}
+		}
+		if s.Pomodoro.Description == "BREAK" {
+			return selectGlyph(true, s.Pomodoro.RemainingSeconds(), s.Pomodoro.DurationSeconds())
+		} else {
+			return selectGlyph(false, s.Pomodoro.RemainingSeconds(), s.Pomodoro.DurationSeconds())
+		}
 	}
 }
 
