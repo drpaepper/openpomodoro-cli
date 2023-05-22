@@ -29,8 +29,9 @@ func breakCmd(cmd *cobra.Command, args []string) error {
 	if len(args) > 0 {
 		x, err := strconv.Atoi(args[0])
 		if err != nil {
-			p.Duration = time.Duration(x) * time.Minute
+			return err
 		}
+		p.Duration = time.Duration(x) * time.Minute
 	} else {
 		p.Duration = time.Duration(int(d)) * time.Minute
 	}

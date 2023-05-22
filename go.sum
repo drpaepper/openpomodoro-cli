@@ -431,8 +431,12 @@ github.com/crufter/copyrecur v0.0.0-20160628173408-c927f40d0726/go.mod h1:bdA69g
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c=
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
-github.com/drpaepper/go-openpomodoro v0.0.0-20230522065929-9443617336b2 h1:je3nKebp8Hye19NOawkuocDsTC1oj57lsJUPWme2fLs=
-github.com/drpaepper/go-openpomodoro v0.0.0-20230522065929-9443617336b2/go.mod h1:KDROK23I633N+NTEmzOi/T/QThL0j/RvR+NP5wHYilo=
+github.com/drpaepper/go-openpomodoro v0.0.0-20230522134043-85393e3ba874 h1:hFGf8wj+uZY1zMYgAW5yjaKA2Cxn/iOcHhkpf2iM1jA=
+github.com/drpaepper/go-openpomodoro v0.0.0-20230522134043-85393e3ba874/go.mod h1:KDROK23I633N+NTEmzOi/T/QThL0j/RvR+NP5wHYilo=
+github.com/drpaepper/go-openpomodoro v0.0.0-20230522135431-78806326944e h1:R8/UP8FZJeU7ebZwZQ7GyP5Tu20YSgwIL8TPVy0dTVY=
+github.com/drpaepper/go-openpomodoro v0.0.0-20230522135431-78806326944e/go.mod h1:IyiKe4RGWHyIefXNRKBBxKzalyPU8vBm1TIMG2p8PwE=
+github.com/drpaepper/go-openpomodoro v0.0.0-20230522142351-878cb401ad83 h1:A4tBz62uhKchjBDcyF9UE/DOEHKPKMxQDywhAUqfxBQ=
+github.com/drpaepper/go-openpomodoro v0.0.0-20230522142351-878cb401ad83/go.mod h1:IyiKe4RGWHyIefXNRKBBxKzalyPU8vBm1TIMG2p8PwE=
 github.com/dustin/go-humanize v1.0.0/go.mod h1:HtrtbFcZ19U5GC7JDqmcUSB87Iq5E25KnS6fMYU6eOk=
 github.com/envoyproxy/go-control-plane v0.9.0/go.mod h1:YTl/9mNaCwkRvm6d1a2C3ymFceY/DCBVvsKhRF0iEA4=
 github.com/envoyproxy/go-control-plane v0.9.1-0.20191026205805-5f8ba28d4473/go.mod h1:YTl/9mNaCwkRvm6d1a2C3ymFceY/DCBVvsKhRF0iEA4=
