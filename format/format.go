@@ -17,14 +17,14 @@ const (
 type Formatter func(*openpomodoro.State) string
 
 var FormatParts = map[string]Formatter{
-	`%r`:  timeRemaining(false),
-	`%!r`: timeRemaining(true),
-	`%R`:  minutesRemaining(false),
-	`%!R`: minutesRemaining(true),
-	`%Z`:  glyphRemaining(false),
-	`%!Z`: glyphRemaining(true),
-	`%l`:  duration,
-	`%L`:  durationMinutes,
+	`%r`: timeRemaining(false),
+	`%R`: timeRemaining(true),
+	`%m`: minutesRemaining(false),
+	`%M`: minutesRemaining(true),
+	`%z`: glyphRemaining(false),
+	`%Z`: glyphRemaining(true),
+	`%l`: duration,
+	`%L`: durationMinutes,
 
 	`%d`: description,
 	`%t`: tags,
@@ -132,7 +132,7 @@ func glyphRemaining(exclaim bool) Formatter {
 	return func(s *openpomodoro.State) string {
 		if s.Pomodoro.IsDone() {
 			if exclaim {
-				return DefaultExclamationPoint
+				return "󰚽"
 			} else {
 				if s.Pomodoro.Description == "BREAK" {
 					return "󰋙"
