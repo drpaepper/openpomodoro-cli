@@ -35,9 +35,9 @@ var FormatParts = map[string]Formatter{
 }
 
 func Format(s *openpomodoro.State, f string) string {
-	if s.Pomodoro.IsInactive() {
-		return ""
-	}
+	//if s.Pomodoro.IsInactive() {
+	//	return ""
+	//}
 
 	result := f
 	for part, replacement := range FormatParts {
