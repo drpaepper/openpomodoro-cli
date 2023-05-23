@@ -59,7 +59,7 @@ func timeRemaining(exclaim bool) Formatter {
 	return func(s *openpomodoro.State) string {
 		d := s.Pomodoro.Remaining()
 
-		if s.Pomodoro.IsDone() {
+		if s.Pomodoro.IsDone() || s.Pomodoro.IsInactive() {
 			if exclaim {
 				return DefaultExclamationPoint
 			} else {
@@ -73,7 +73,7 @@ func timeRemaining(exclaim bool) Formatter {
 
 func minutesRemaining(exclaim bool) Formatter {
 	return func(s *openpomodoro.State) string {
-		if s.Pomodoro.IsDone() {
+		if s.Pomodoro.IsDone() || s.Pomodoro.IsInactive() {
 			if exclaim {
 				return DefaultExclamationPoint
 			} else {
@@ -86,7 +86,7 @@ func minutesRemaining(exclaim bool) Formatter {
 
 func percentRemaining(exclaim bool) Formatter {
 	return func(s *openpomodoro.State) string {
-		if s.Pomodoro.IsDone() {
+		if s.Pomodoro.IsDone() || s.Pomodoro.IsInactive() {
 			if exclaim {
 				return DefaultExclamationPoint
 			} else {
@@ -143,18 +143,18 @@ func selectGlyph(isBreak bool, p int) string {
 
 func glyphRemaining(exclaim bool) Formatter {
 	return func(s *openpomodoro.State) string {
-		if s.Pomodoro.IsDone() {
+		if s.Pomodoro.IsDone() || s.Pomodoro.IsInactive() {
 			if exclaim {
 				return "󰚽"
 			} else {
-				if s.Pomodoro.Description == "BREAK" {
+				if s.Pomodoro.Tags[0] == "BREAK" {
 					return "󰫈"
 				} else {
 					return "󰪥"
 				}
 			}
 		}
-		if s.Pomodoro.Description == "BREAK" {
+		if s.Pomodoro.Tags[0] == "BREAK" {
 			return selectGlyph(true, s.Pomodoro.RemainingPercentage())
 		} else {
 			return selectGlyph(false, s.Pomodoro.RemainingPercentage())

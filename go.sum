@@ -439,6 +439,8 @@ github.com/drpaepper/go-openpomodoro v0.0.0-20230522142351-878cb401ad83 h1:A4tBz
 github.com/drpaepper/go-openpomodoro v0.0.0-20230522142351-878cb401ad83/go.mod h1:IyiKe4RGWHyIefXNRKBBxKzalyPU8vBm1TIMG2p8PwE=
 github.com/drpaepper/go-openpomodoro v0.0.0-20230523071208-1a469e8693e3 h1:t9hCJKOgqUaUm2aXZuyhqKWCSS2sRmaN3IiRlnYvGw4=
 github.com/drpaepper/go-openpomodoro v0.0.0-20230523071208-1a469e8693e3/go.mod h1:IyiKe4RGWHyIefXNRKBBxKzalyPU8vBm1TIMG2p8PwE=
+github.com/drpaepper/go-openpomodoro v0.0.0-20230523200800-407f8fcc0f2c h1:8l1dx80weLFvUIPZCVnV7j1BFq9RQD1zWXonY9JHNtU=
+github.com/drpaepper/go-openpomodoro v0.0.0-20230523200800-407f8fcc0f2c/go.mod h1:IyiKe4RGWHyIefXNRKBBxKzalyPU8vBm1TIMG2p8PwE=
 github.com/dustin/go-humanize v1.0.0/go.mod h1:HtrtbFcZ19U5GC7JDqmcUSB87Iq5E25KnS6fMYU6eOk=
 github.com/envoyproxy/go-control-plane v0.9.0/go.mod h1:YTl/9mNaCwkRvm6d1a2C3ymFceY/DCBVvsKhRF0iEA4=
 github.com/envoyproxy/go-control-plane v0.9.1-0.20191026205805-5f8ba28d4473/go.mod h1:YTl/9mNaCwkRvm6d1a2C3ymFceY/DCBVvsKhRF0iEA4=

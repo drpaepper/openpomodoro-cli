@@ -37,11 +37,12 @@ func breakCmd(cmd *cobra.Command, args []string) error {
 	}
 
 	p.Description = "BREAK"
-	p.StartTime = time.Now().Add(-agoFlag)
 	var tags []string
 	tags = make([]string, 1)
 	tags[0] = "BREAK"
 	p.Tags = tags
+
+	p.StartTime = time.Now().Add(-agoFlag)
 
 	if err := client.Start(p); err != nil {
 		return err
