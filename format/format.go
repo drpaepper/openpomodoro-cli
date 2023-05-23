@@ -10,7 +10,7 @@ import (
 )
 
 const (
-	DefaultFormat           = "%!r⏱  %c%!g🍅\n%d\n%t"
+	DefaultFormat           = "%R⏱  %c%G🍅\n%d\n%t"
 	DefaultExclamationPoint = "❗️"
 )
 
@@ -23,15 +23,17 @@ var FormatParts = map[string]Formatter{
 	`%M`: minutesRemaining(true),
 	`%z`: glyphRemaining(false),
 	`%Z`: glyphRemaining(true),
+	`%p`: percentRemaining(false),
+	`%P`: percentRemaining(true),
 	`%l`: duration,
 	`%L`: durationMinutes,
 
 	`%d`: description,
 	`%t`: tags,
 
-	`%c`:  goalComplete,
-	`%g`:  goalTotal(false),
-	`%!g`: goalTotal(true),
+	`%c`: goalComplete,
+	`%g`: goalTotal(false),
+	`%G`: goalTotal(true),
 }
 
 func Format(s *openpomodoro.State, f string) string {
@@ -82,46 +84,57 @@ func minutesRemaining(exclaim bool) Formatter {
 	}
 }
 
-func selectGlyph(isBreak bool, r int, d int) string {
+func percentRemaining(exclaim bool) Formatter {
+	return func(s *openpomodoro.State) string {
+		if s.Pomodoro.IsDone() {
+			if exclaim {
+				return DefaultExclamationPoint
+			} else {
+				return "0"
+			}
+		}
+		return defaultString(s.Pomodoro.RemainingPercentage())
+	}
+}
 
-	p := round((float64(r) / float64(d)) * 100)
+func selectGlyph(isBreak bool, p int) string {
 
 	if isBreak {
 
 		if p > 83 {
-			return "󰫈"
+			return "󰋙"
 		} else if p > 67 {
-			return "󰫇"
+			return "󰫃"
 		} else if p > 50 {
-			return "󰫆"
+			return "󰫄"
 		} else if p > 33 {
 			return "󰫅"
 		} else if p > 17 {
-			return "󰫄"
+			return "󰫆"
 		} else if p > 0 {
-			return "󰫃"
+			return "󰫇"
 		} else {
-			return "󰋙"
+			return "󰫈"
 		}
 	} else {
 		if p > 88 {
-			return "󰪥"
+			return "󰄰"
 		} else if p > 75 {
-			return "󰪤"
+			return "󰪞"
 		} else if p > 63 {
-			return "󰪣"
+			return "󰪟"
 		} else if p > 50 {
-			return "󰪢"
+			return "󰪠"
 		} else if p > 38 {
 			return "󰪡"
 		} else if p > 25 {
-			return "󰪠"
+			return "󰪢"
 		} else if p > 13 {
-			return "󰪟"
+			return "󰪣"
 		} else if p > 0 {
-			return "󰪞"
+			return "󰪤"
 		} else {
-			return "󰄰"
+			return "󰪥"
 		}
 
 	}
@@ -135,16 +148,16 @@ func glyphRemaining(exclaim bool) Formatter {
 				return "󰚽"
 			} else {
 				if s.Pomodoro.Description == "BREAK" {
-					return "󰋙"
+					return "󰫈"
 				} else {
-					return "󰄰"
+					return "󰪥"
 				}
 			}
 		}
 		if s.Pomodoro.Description == "BREAK" {
-			return selectGlyph(true, s.Pomodoro.RemainingSeconds(), s.Pomodoro.DurationSeconds())
+			return selectGlyph(true, s.Pomodoro.RemainingPercentage())
 		} else {
-			return selectGlyph(false, s.Pomodoro.RemainingSeconds(), s.Pomodoro.DurationSeconds())
+			return selectGlyph(false, s.Pomodoro.RemainingPercentage())
 		}
 	}
 }
